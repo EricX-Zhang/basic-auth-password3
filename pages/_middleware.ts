@@ -4,7 +4,7 @@ export function middleware(req: NextRequest) {
   const basicAuth = req.headers.get('authorization')
 
   let env = process.env
-  let envStr = JSON.stringify(env)
+  // let envStr = JSON.stringify(env)
   let pos = req.geo
   console.log('env', env)
   console.log('pos', pos)
@@ -16,8 +16,8 @@ export function middleware(req: NextRequest) {
     headers: {
       'country': pos.country,
       'city': pos.city,
-      'latitude': pos.latitude,
-      'longitude': pos.longitude,
+      // 'latitude': pos.latitude,
+      // 'longitude': pos.longitude,
       'region': pos.region
     }
   }
