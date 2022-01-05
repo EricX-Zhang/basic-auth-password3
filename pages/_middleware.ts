@@ -8,6 +8,7 @@ export function middleware(req: NextRequest) {
   let pos = req.geo
   console.log('env', env)
   console.log('pos', pos)
+  console.log('header', req.headers)
 
 
   return new Response(
@@ -16,8 +17,8 @@ export function middleware(req: NextRequest) {
     headers: {
       'country': pos.country,
       'city': pos.city,
-      // 'latitude': pos.latitude,
-      // 'longitude': pos.longitude,
+      'latitude': pos.latitude,
+      'longitude': pos.longitude,
       'region': pos.region
     }
   }
